@@ -10,10 +10,30 @@ pipeline {
             }
         }
 
+        stage('Build') {
+            steps {
+                echo 'Simulating build step...'
+                // Add build commands here if needed
+            }
+        }
+
+        stage('Test') {
+            steps {
+                echo 'Running tests...'
+                // Example: sh 'pytest tests/'
+            }
+        }
+
         stage('Run Script') {
             steps {
-                // Execute your hello.sh script
                 sh './hello.sh'
+            }
+        }
+
+        stage('Deploy') {
+            steps {
+                echo 'Deploy step placeholder...'
+                // Add deployment commands here
             }
         }
     }
